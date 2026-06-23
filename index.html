@@ -1,152 +1,307 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
-<!-- الميتا الأساسية لمحركات البحث -->
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>مياه واحة قطر | عروض مميزة وتوصيل سريع</title>
-<meta name="description" content="اطلب مياه واحة قطر الآن واستفد من أفضل العروض والأسعار. توصيل سريع وموثوق إلى باب منزلك.">
-<meta name="keywords" content="مياه واحة قطر, مياه شرب, توصيل مياه, عروض مياه قطر, مياه معدنية">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مياه الواحة | عروض حصرية ومميزة</title>
+    <style>
+        :root {
+            --bg-gradient: linear-gradient(135deg, #0f172a 0%, #1e3a8a 50%, #0369a1 100%);
+            --card-bg: rgba(255, 255, 255, 0.08);
+            --card-border: rgba(255, 255, 255, 0.15);
+            --text-light: #f8fafc;
+            --text-gold: #f59e0b;
+            --whatsapp-green: #25D366;
+            --whatsapp-glow: rgba(37, 211, 102, 0.4);
+            --btn-blue: linear-gradient(135deg, #38bdf8 0%, #0369a1 100%);
+        }
 
-<!-- الميتا الخاصة بـ Facebook و WhatsApp و LinkedIn -->
-<meta property="og:title" content="مياه واحة قطر | عروض مميزة وتوصيل سريع">
-<meta property="og:description" content="اطلب مياه واحة قطر الآن واستفد من أفضل العروض والأسعار.">
-<meta property="og:image" content="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR0CyWloTpiDJQahT8_Y_plnM4ip2UILO4n3Q&s">
-<meta property="og:url" content="رابط_موقعك_هنا">
-<meta property="og:type" content="website">
-<meta property="og:site_name" content="مياه واحة قطر">
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            -webkit-tap-highlight-color: transparent;
+        }
 
-<!-- الميتا الخاصة بـ Twitter (X) -->
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="مياه واحة قطر | عروض مميزة وتوصيل سريع">
-<meta name="twitter:description" content="اطلب مياه واحة قطر الآن واستفد من أفضل العروض والأسعار.">
-<meta name="twitter:image" content="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR0CyWloTpiDJQahT8_Y_plnM4ip2UILO4n3Q&s">  <link rel="stylesheet" href="css/style.css">
-  <script src="https://cdn.socket.io/4.7.2/socket.io.min.js"></script>
-  <style>
-    /* 1. تثبيت أبعاد الكارد لضمان تساويها */
-.product-card {
-    display: flex;
-    flex-direction: column;
-    height: 100%; /* لضمان تساوي ارتفاع الكروت */
-    overflow: hidden;
-}
+        body {
+            background: var(--bg-gradient);
+            color: var(--text-light);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+            overflow-x: hidden;
+            padding: 20px;
+        }
 
-/* 2. حاوية الصورة (هذا أهم جزء) */
-.product-image-container {
-    width: 100%;
-    height: 250px; /* يمكنك تعديل الارتفاع حسب رغبتك */
-    background-color: #f8f9fa; /* لون خلفية للفراغات إذا كانت الصورة صغيرة */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
-}
+        /* حاوية العرض الرئيسية للموبايل */
+        .wrapper {
+            width: 100%;
+            max-width: 430px;
+            margin: auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
 
-/* 3. تنسيق الصورة داخل الحاوية */
-.product-image {
-    width: 100%;
-    height: 100%;
-    object-fit: contain; /* هذا هو الأمر الذي يمنع القص ويظهر الصورة كاملة */
-    padding: 10px; /* مساحة بسيطة حول الصورة */
-    transition: transform 0.3s ease;
-}
+        /* الهيدر والشعار */
+        header {
+            margin-top: 10px;
+            margin-bottom: 25px;
+            animation: fadeInDown 0.8s ease-out;
+        }
+
+        .logo-box {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .logo-text {
+            font-size: 28px;
+            font-weight: 900;
+            letter-spacing: 1px;
+            background: linear-gradient(to left, #38bdf8, #f8fafc);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.2);
+        }
+
+        /* قسم النصوص التسويقية السريعة والخاطفة */
+        .promo-header {
+            text-align: center;
+            margin-bottom: 30px;
+            animation: fadeIn 1s ease-out;
+        }
+
+        .promo-header h1 {
+            font-size: 24px;
+            font-weight: 700;
+            line-height: 1.3;
+            margin-bottom: 12px;
+            color: #ffffff;
+        }
+
+        .promo-header h1 span {
+            color: var(--text-gold);
+            text-shadow: 0 0 15px rgba(245, 158, 11, 0.4);
+        }
+
+        .promo-header p {
+            font-size: 16px;
+            color: #cbd5e1;
+            font-weight: 500;
+        }
+
+        /* الكروت التفاعلية فائقة الاحترافية */
+        .cards-container {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .action-card {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-radius: 24px;
+            padding: 24px;
+            text-align: center;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        .action-card:active {
+            transform: scale(0.98);
+        }
+
+        .card-badge {
+            display: inline-block;
+            background: rgba(245, 158, 11, 0.15);
+            border: 1px solid rgba(245, 158, 11, 0.3);
+            color: var(--text-gold);
+            padding: 6px 16px;
+            border-radius: 50px;
+            font-size: 13px;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+
+        .action-card h2 {
+            font-size: 22px;
+            font-weight: 800;
+            margin-bottom: 10px;
+            color: #ffffff;
+        }
+
+        .action-card p {
+            font-size: 14px;
+            color: #94a3b8;
+            margin-bottom: 20px;
+        }
+
+        /* الأزرار العريضة المخصصة للنقر السريع بدون تشتيت */
+        .btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            width: 100%;
+            padding: 14px;
+            border-radius: 16px;
+            font-size: 12px;
+            font-weight: 700;
+            text-decoration: none;
+            color: #ffffff;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+        }
+
+        .btn-whatsapp {
+            background: var(--whatsapp-green);
+            box-shadow: 0 8px 25px var(--whatsapp-glow);
+            animation: pulseGlow 2s infinite;
+        }
+
+        .btn-store {
+            background: var(--btn-blue);
+            box-shadow: 0 8px 25px rgba(3, 105, 161, 0.3);
+        }
+
+        .btn svg {
+            width: 24px;
+            height: 24px;
+            fill: currentColor;
+        }
+
+        /* شبكة الميزات السريعة كعنصر ثقة بصري */
+        .trust-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+            width: 100%;
+            margin-top: 10px;
+        }
+
+        .trust-item {
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            padding: 12px;
+            border-radius: 14px;
+            font-size: 13px;
+            font-weight: 600;
+            color: #cbd5e1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+        }
+
+        /* الفوتر المتناسق */
+        footer {
+            margin-top: 30px;
+            font-size: 11px;
+            color: #fff;
+            letter-spacing: 0.5px;
+        }
+
+        /* تأثيرات الحركة والتحسين البصري للإعلان */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes pulseGlow {
+            0% { box-shadow: 0 8px 25px var(--whatsapp-glow); }
+            50% { box-shadow: 0 8px 35px rgba(37, 211, 102, 0.7); }
+            100% { box-shadow: 0 8px 25px var(--whatsapp-glow); }
+        }
     </style>
 </head>
 <body>
-  <!-- Header -->
-  <header class="header">
-    <div class="container header-content">
-      <div class="logo">
-        <div class="logo-icon">💧</div>
-        <div class="logo-text">
-          <h1>مياه واحة قطر</h1>
-          <span>qatar Oasis Water</span>
-        </div>
-      </div>
 
-    </div>
-  </header>
-
-
-
-  <!-- Hero Section -->
-  <section class="hero">
-    <div class="container hero-content">
-      <div class="hero-badge">
-        <span>✨</span>
-        <span>منتجات طبيعية 100% من قطرنا </span>
-      </div>
-      <h2>مياه نقية من قلب الطبيعة القطريه</h2>
-      <p>استمتع بأفضل أنواع المياه المعدنية والطبيعية من ينابيع قطر العريقة</p>
-    </div>
-  </section>
-
-  <!-- Products Section -->
-  <section class="products-section">
-    <div class="container">
-      <h2 class="section-title">العروض  </h2>
-      <div class="products-grid" id="productsContainer">
-        <div class="loading">
-          <div class="spinner"></div>
-          <p>جاري تحميل المنتجات...</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer class="footer">
-    <div class="container">
-      <p>© 2024 مياه واحة قطر - جميع الحقوق محفوظة 💧</p>
-    </div>
-  </footer>
-
-  <script src="js/main.js"></script>
-  <script>
-    document.addEventListener('DOMContentLoaded', async () => {
-      const productsContainer = document.getElementById('productsContainer');
-      
-      // Track page
-      trackPageChange('home');
-      
-      // Load products
-      const products = await fetchProducts();
-      
-      if (products.length === 0) {
-        productsContainer.innerHTML = `
-          <div style="text-align:center;padding:40px;color:var(--text-secondary);">
-            <p style="font-size:18px;">لا توجد منتجات متاحة يرجى اعادة تحميل الصفحة</p>
-          </div>
-        `;
-        return;
-      }
-      
-      productsContainer.innerHTML = products.map(product => `
-        <div class="product-card page">
-          <img src="${product.image_url || 'https://images.unsplash.com/photo-1548839140-29a749e1cf4d?w=400'}" 
-               alt="${product.name_ar}" 
-               class="product-image"
-               onerror="this.src='https://images.unsplash.com/photo-1548839140-29a749e1cf4d?w=400'">
-          <div class="product-info">
-            <h3 class="product-name">${product.name_ar}</h3>
-            <p class="product-description">${product.description || ''}</p>
-            <div class="product-footer">
-              <span class="product-price">${product.price} ر.ق</span>
-              <button class="btn btn-primary" onclick="viewProduct(${product.id})">
-                شراء الان 
-              </button>
+    <div class="wrapper">
+        
+        <!-- الهيدر مع تصميم الشعار SVG نقي فريد ومحمي الحقوق -->
+        <header>
+            <div class="logo-box">
+                <svg width="60" height="60" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                        <linearGradient id="logoGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" stop-color="#38bdf8" />
+                            <stop offset="100%" stop-color="#0284c7" />
+                        </linearGradient>
+                    </defs>
+                    <path d="M50,12 C50,12 82,46 82,68 C82,84.5 67.5,96 50,96 C32.5,96 18,84.5 18,68 C18,46 50,12 50,12 Z" fill="url(#logoGrad)"/>
+                    <path d="M50,26 C50,26 71,52 71,68 C71,78 61,86 50,86 C39,86 29,78 29,68 C29,52 50,26 50,26 Z" fill="#ffffff" opacity="0.2"/>
+                    <circle cx="44" cy="62" r="5" fill="#ffffff" opacity="0.4"/>
+                </svg>
+                <div class="logo-text">مياه الواحة</div>
             </div>
-          </div>
+        </header>
+
+        <!-- العنوان الرئيسي الخاطف للمستعمل بالسنابتشات -->
+        <section class="promo-header">
+            <h1>عروض الصيف <span>الخاصة!</span></h1>
+            <p>اضغط للطلب المباشر من المتجر أو تصفح العروض الحصرية المتاحة الآن</p>
+        </section>
+
+        <!-- أزرار الأكشن السريعة المباشرة المصممة خصيصا للتحويل الفوري للواتس -->
+        <div class="cards-container">
+            
+            <!-- كارت الواتساب الأساسي والبارز -->
+            <div class="action-card">
+                <span class="card-badge">🔥 العرض الأكثر طلباً </span>
+                <h2>   كولار مياه</h2>
+                <p>تواصل مع خدمة العملاء مباشرة </p>
+                
+                <!-- يرجى تعديل الرقم 966500000000 أدناه إلى رقمك الفعلي قبل الرفع -->
+                <a href="https://wa.me/966500000000?text=مرحباً%20مياه%20الواحة%2C%20أرغب%20في%20طلب%20عروض%20المياه%20والكولار%20الحصرية" class="btn btn-whatsapp" target="_blank">
+                    <svg viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.411 0 11.973 0c3.178.001 6.165 1.24 8.413 3.494 2.247 2.253 3.484 5.244 3.484 8.423 0 6.623-5.352 11.972-11.914 11.972-2.001-.001-3.97-.504-5.731-1.464L0 24zm6.076-4.113l.379.225c1.722 1.02 3.716 1.559 5.517 1.56 5.48-.001 9.938-4.46 9.943-9.94.002-2.654-1.031-5.151-2.909-7.03C17.145 2.818 14.653 1.785 12 1.785 6.519 1.785 2.064 6.24 2.061 11.724c-.001 1.884.499 3.73 1.448 5.395l.247.433-.969 3.541 3.626-.951zM18.23 15.6c-.299-.15-1.771-.875-2.046-.975-.275-.101-.476-.15-.676.15-.199.299-.773.975-.948 1.174-.175.199-.349.224-.648.075-.3-.15-1.266-.466-2.41-1.486-.89-.794-1.49-1.775-1.665-2.074-.175-.299-.019-.461.13-.61.135-.134.299-.349.449-.524.15-.175.2-.299.3-.499.1-.2.05-.374-.025-.524-.075-.15-.676-1.631-.926-2.233-.243-.586-.491-.507-.676-.516-.175-.008-.375-.01-.575-.01-.2 0-.525.075-.8.374-.275.299-1.05 1.025-1.05 2.5 0 1.475 1.075 2.9 1.225 3.1.15.2 2.11 3.221 5.111 4.52.714.309 1.272.494 1.706.633.717.227 1.37.195 1.886.118.575-.085 1.771-.724 2.021-1.424.25-.699.25-1.3.175-1.424-.075-.124-.275-.199-.575-.349z"/></svg>
+                    اطلب العرض الحين  
+                </a>
+            </div>
+
+            <!-- كارت المتجر الفرعي بدون أي تشتيت -->
+            <div class="action-card">
+                <h2>مشاهدة جميع العروض </h2>
+                <p>إذا كنت تفضل تصفح الكتالوج الكامل والأسعار مباشرة</p>
+                <a href="https://qataroasis.onrender.com/" class="btn btn-store" target="_blank">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                    الانتقال لكتالوج العروض الشامل
+                </a>
+            </div>
+
         </div>
-      `).join('');
-    });
-    
-    function viewProduct(productId) {
-      localStorage.setItem('selected_product', productId);
-      window.location.href = `pages/product.html?id=${productId}`;
-    }
-  </script>
+
+        <!-- شبكة المميزات السريعة لدعم قرار العميل فورياً -->
+        <div class="trust-grid">
+            <div class="trust-item">💧 نقاوة وجودة مضمونة</div>
+            <div class="trust-item">🚚 توصيل سريع مجاني</div>
+            <div class="trust-item">🎁 هدايا وسحوبات دورية</div>
+            <div class="trust-item">⚡ خدمة عملاء 24 ساعة</div>
+        </div>
+
+        <footer>
+            <p>جميع الحقوق محفوظة لمياه الواحة © 2026</p>
+        </footer>
+
+    </div>
+
 </body>
 </html>
