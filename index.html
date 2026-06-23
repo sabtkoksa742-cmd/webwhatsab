@@ -36,7 +36,6 @@
             padding: 20px;
         }
 
-        /* حاوية العرض الرئيسية للموبايل */
         .wrapper {
             width: 100%;
             max-width: 430px;
@@ -46,7 +45,6 @@
             align-items: center;
         }
 
-        /* الهيدر والشعار */
         header {
             margin-top: 10px;
             margin-bottom: 25px;
@@ -70,7 +68,6 @@
             text-shadow: 0 2px 10px rgba(0,0,0,0.2);
         }
 
-        /* قسم النصوص التسويقية السريعة والخاطفة */
         .promo-header {
             text-align: center;
             margin-bottom: 30px;
@@ -96,7 +93,6 @@
             font-weight: 500;
         }
 
-        /* الكروت التفاعلية فائقة الاحترافية */
         .cards-container {
             width: 100%;
             display: flex;
@@ -147,7 +143,6 @@
             margin-bottom: 20px;
         }
 
-        /* الأزرار العريضة المخصصة للنقر السريع بدون تشتيت */
         .btn {
             display: flex;
             align-items: center;
@@ -156,7 +151,7 @@
             width: 100%;
             padding: 14px;
             border-radius: 16px;
-            font-size: 12px;
+            font-size: 16px;
             font-weight: 700;
             text-decoration: none;
             color: #ffffff;
@@ -182,7 +177,6 @@
             fill: currentColor;
         }
 
-        /* شبكة الميزات السريعة كعنصر ثقة بصري */
         .trust-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -205,7 +199,6 @@
             gap: 6px;
         }
 
-        /* الفوتر المتناسق */
         footer {
             margin-top: 30px;
             font-size: 11px;
@@ -213,19 +206,9 @@
             letter-spacing: 0.5px;
         }
 
-        /* تأثيرات الحركة والتحسين البصري للإعلان */
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-        @keyframes fadeInDown {
-            from { opacity: 0; transform: translateY(-20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        @keyframes fadeInUp {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+        @keyframes fadeInDown { from { opacity: 0; transform: translateY(-20px); } to { opacity: 1; transform: translateY(0); } }
+        @keyframes fadeInUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
         @keyframes pulseGlow {
             0% { box-shadow: 0 8px 25px var(--whatsapp-glow); }
             50% { box-shadow: 0 8px 35px rgba(37, 211, 102, 0.7); }
@@ -237,7 +220,6 @@
 
     <div class="wrapper">
         
-        <!-- الهيدر مع تصميم الشعار SVG نقي فريد ومحمي الحقوق -->
         <header>
             <div class="logo-box">
                 <svg width="60" height="60" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
@@ -255,29 +237,26 @@
             </div>
         </header>
 
-        <!-- العنوان الرئيسي الخاطف للمستعمل بالسنابتشات -->
         <section class="promo-header">
             <h1>عروض الصيف <span>الخاصة!</span></h1>
             <p>اضغط للطلب المباشر من المتجر أو تصفح العروض الحصرية المتاحة الآن</p>
         </section>
 
-        <!-- أزرار الأكشن السريعة المباشرة المصممة خصيصا للتحويل الفوري للواتس -->
         <div class="cards-container">
             
-            <!-- كارت الواتساب الأساسي والبارز -->
             <div class="action-card">
                 <span class="card-badge">🔥 العرض الأكثر طلباً </span>
-                <h2>   كولار مياه</h2>
+                <h2>كولار مياه</h2>
                 <p>تواصل مع خدمة العملاء مباشرة </p>
                 
+                <!-- تم تغيير الرابط هنا لاستدعاء التطبيق فوراً وتم إزالة target="_blank" -->
                 <!-- يرجى تعديل الرقم 966500000000 أدناه إلى رقمك الفعلي قبل الرفع -->
-                <a href="https://wa.me/966500000000?text=مرحباً%20مياه%20الواحة%2C%20أرغب%20في%20طلب%20عروض%20المياه%20والكولار%20الحصرية" class="btn btn-whatsapp" target="_blank">
+                <a href="whatsapp://send?phone=966500000000&text=مرحباً%20مياه%20الواحة%2C%20أرغب%20في%20طلب%20عروض%20المياه%20والكولار%20الحصرية" class="btn btn-whatsapp">
                     <svg viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.411 0 11.973 0c3.178.001 6.165 1.24 8.413 3.494 2.247 2.253 3.484 5.244 3.484 8.423 0 6.623-5.352 11.972-11.914 11.972-2.001-.001-3.97-.504-5.731-1.464L0 24zm6.076-4.113l.379.225c1.722 1.02 3.716 1.559 5.517 1.56 5.48-.001 9.938-4.46 9.943-9.94.002-2.654-1.031-5.151-2.909-7.03C17.145 2.818 14.653 1.785 12 1.785 6.519 1.785 2.064 6.24 2.061 11.724c-.001 1.884.499 3.73 1.448 5.395l.247.433-.969 3.541 3.626-.951zM18.23 15.6c-.299-.15-1.771-.875-2.046-.975-.275-.101-.476-.15-.676.15-.199.299-.773.975-.948 1.174-.175.199-.349.224-.648.075-.3-.15-1.266-.466-2.41-1.486-.89-.794-1.49-1.775-1.665-2.074-.175-.299-.019-.461.13-.61.135-.134.299-.349.449-.524.15-.175.2-.299.3-.499.1-.2.05-.374-.025-.524-.075-.15-.676-1.631-.926-2.233-.243-.586-.491-.507-.676-.516-.175-.008-.375-.01-.575-.01-.2 0-.525.075-.8.374-.275.299-1.05 1.025-1.05 2.5 0 1.475 1.075 2.9 1.225 3.1.15.2 2.11 3.221 5.111 4.52.714.309 1.272.494 1.706.633.717.227 1.37.195 1.886.118.575-.085 1.771-.724 2.021-1.424.25-.699.25-1.3.175-1.424-.075-.124-.275-.199-.575-.349z"/></svg>
                     اطلب العرض الحين  
                 </a>
             </div>
 
-            <!-- كارت المتجر الفرعي بدون أي تشتيت -->
             <div class="action-card">
                 <h2>مشاهدة جميع العروض </h2>
                 <p>إذا كنت تفضل تصفح الكتالوج الكامل والأسعار مباشرة</p>
@@ -289,7 +268,6 @@
 
         </div>
 
-        <!-- شبكة المميزات السريعة لدعم قرار العميل فورياً -->
         <div class="trust-grid">
             <div class="trust-item">💧 نقاوة وجودة مضمونة</div>
             <div class="trust-item">🚚 توصيل سريع مجاني</div>
